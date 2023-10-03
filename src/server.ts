@@ -31,6 +31,7 @@ import CreatePostController from '../Controllers/Post/CreatePostController'
 import DeletePostController from '../Controllers/Post/DeletePostController'
 import EditPostController from '../Controllers/Post/EditPostController'
 import EditUserController from '../Controllers/User/EditUserController'
+import GetPostController from '../Controllers/Post/GetPostsController'
 //Routes
 app.post('/registerUser', upload.single('picture'), RegisterUserController)
 app.post('/signin', SigninController)
@@ -38,3 +39,4 @@ app.post('/createPost/:authorId', Authentication, upload.single('picture'), Crea
 app.delete('/deletePost/:postId', Authentication, DeletePostController)
 app.put('/editPost/:postId', Authentication, upload.single('picture'), EditPostController)
 app.put('/editEmailUser/:userId', Authentication, upload.single('picture'), EditUserController )
+app.get('/getPosts/:authorId', Authentication, GetPostController)
